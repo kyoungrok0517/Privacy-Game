@@ -9,59 +9,81 @@
 		<style type="text/css">
 			.btn {
 				height: 5em;			}
+
+			.question {
+				display: none;
+			}
+
+			div img {
+				display: block;
+				margin: auto;
+			}
+
+			.btn-group {
+				margin: auto;
+			}
+
+			.pagination ul {
+				float: none;
+				display: inline-block;
+				overflow: hidden;
+			}
+			.pagination.center {
+				text-align: center;
+			}
 		</style>
 	</head>
-	<body class="row">
-		<div class="question span12">
+	<body class="container">
+		<div class="question row" style="display: block;">
 			<img src="img/p-1.png" alt="p-1" width="400" />
-			<p>
+			<p class="lead">
 				Q1) Who would you be willing to share this picture with?
 			</p>
 			<div class="btn-group" data-toggle="buttons-radio">
 				<button type="button" class="btn btn-primary">
 					Everyone
 				</button>
-				<button type="button" class="btn btn-primary">
+				<button type="button" class="btn btn-info">
 					Friend of Friends
 				</button>
-				<button type="button" class="btn btn-primary">
+				<button type="button" class="btn btn-success">
 					Friends and Family
 				</button>
-				<button type="button" class="btn btn-primary">
+				<button type="button" class="btn btn-warning">
 					Specific Groups of Users
 				</button>
-				<button type="button" class="btn btn-primary">
+				<button type="button" class="btn btn-danger">
 					Just me!
 				</button>
 			</div>
 		</div>
-		<div class="question span12">
+		<div class="question row">
 			<img src="img/p-2.png" alt="p-2" width="400" />
-			<p>
+			<p class="lead">
 				Q2) Can you determine where this picture was taken?
 			</p>
 			<div class="btn-group" data-toggle="buttons-radio">
 				<button type="button" class="btn btn-primary">
 					Exact Location
 				</button>
-				<button type="button" class="btn btn-primary">
+				<button type="button" class="btn btn-info">
 					I know the general area
 				</button>
-				<button type="button" class="btn btn-primary">
+				<button type="button" class="btn btn-success">
 					No Locational Awareness
 				</button>
 			</div>
 		</div>
-		<div class="question span12">
+		<div class="question row">
 			<img src="img/p-3.png" alt="p-3" width="800" />
-			<p>
+			<p class="lead">
 				Q3) Would you share this content?
 			</p>
 			<div class="btn-group" data-toggle="buttons-radio">
-				<button type="button" class="btn btn-primary">
+				<button type="button" class="btn btn-primary" style="width: 5em;">
 					Yes
 				</button>
-				<button type="button" class="btn btn-primary">
+				<button type="button" class="btn btn-info" style="width: 5em;">
 					No
 				</button>
 			</div>
@@ -71,24 +93,27 @@
 			</form>
 		</div>
 
-		<div class="pagination">
-			<ul>
-				<li>
-					<a href="#">Prev</a>
-				</li>
-				<li>
-					<a href="#">1</a>
-				</li>
-				<li>
-					<a href="#">2</a>
-				</li>
-				<li>
-					<a href="#">3</a>
-				</li>
-				<li>
-					<a href="#">Next</a>
-				</li>
-			</ul>
+		<div class="row">
+			<div class="pagination">
+
+				<ul>
+					<li>
+						<a href="#">Prev</a>
+					</li>
+					<li class="active">
+						<a href="#">1</a>
+					</li>
+					<li>
+						<a href="#">2</a>
+					</li>
+					<li>
+						<a href="#">3</a>
+					</li>
+					<li>
+						<a href="#">Next</a>
+					</li>
+				</ul>
+			</div>
 		</div>
 	</body>
 </html>
