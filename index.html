@@ -5,11 +5,90 @@
 		<script src="js/jquery-1.7.2.min.js" type="text/javascript"></script>
 		<script src="js/jquery-ui-1.8.20.custom.min.js" type="text/javascript"></script>
 		<script src="js/bootstrap.min.js"></script>
-		<link href="css/bootstrap.min.css" />
+		<link type="text/css" rel="stylesheet" href="css/bootstrap.min.css" />
+		<style type="text/css">
+			.btn {
+				height: 5em;			}
+		</style>
 	</head>
-	<body>
-		<div class="question">
-			
+	<body class="row">
+		<div class="question span12">
+			<img src="img/p-1.png" alt="p-1" width="400" />
+			<p>
+				Q1) Who would you be willing to share this picture with?
+			</p>
+			<div class="btn-group" data-toggle="buttons-radio">
+				<button type="button" class="btn btn-primary">
+					Everyone
+				</button>
+				<button type="button" class="btn btn-primary">
+					Friend of Friends
+				</button>
+				<button type="button" class="btn btn-primary">
+					Friends and Family
+				</button>
+				<button type="button" class="btn btn-primary">
+					Specific Groups of Users
+				</button>
+				<button type="button" class="btn btn-primary">
+					Just me!
+				</button>
+			</div>
+		</div>
+		<div class="question span12">
+			<img src="img/p-2.png" alt="p-2" width="400" />
+			<p>
+				Q2) Can you determine where this picture was taken?
+			</p>
+			<div class="btn-group" data-toggle="buttons-radio">
+				<button type="button" class="btn btn-primary">
+					Exact Location
+				</button>
+				<button type="button" class="btn btn-primary">
+					I know the general area
+				</button>
+				<button type="button" class="btn btn-primary">
+					No Locational Awareness
+				</button>
+			</div>
+		</div>
+		<div class="question span12">
+			<img src="img/p-3.png" alt="p-3" width="800" />
+			<p>
+				Q3) Would you share this content?
+			</p>
+			<div class="btn-group" data-toggle="buttons-radio">
+				<button type="button" class="btn btn-primary">
+					Yes
+				</button>
+				<button type="button" class="btn btn-primary">
+					No
+				</button>
+			</div>
+			<form>
+				<b>If Yes, please explain what features make it 'shareable'</b>
+				<input type="text" name="reason">
+			</form>
+		</div>
+
+		<div class="pagination">
+			<ul>
+				<li>
+					<a href="#">Prev</a>
+				</li>
+				<li>
+					<a href="#">1</a>
+				</li>
+				<li>
+					<a href="#">2</a>
+				</li>
+				<li>
+					<a href="#">3</a>
+				</li>
+				<li>
+					<a href="#">Next</a>
+				</li>
+			</ul>
 		</div>
 	</body>
 </html>
