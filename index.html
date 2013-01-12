@@ -10,19 +10,19 @@
 				$('.carousel').carousel({
 					interval : false
 				});
-				
+
 				$('.btn').click(function() {
 					var answer = $(this).text();
 					var answer_container = $(this).parent().siblings('.answer');
-					
+
 					answer_container.text(answer);
 					answer_container.effect('highlight');
 				});
-				
+
 				$('.more-form').click(function(e) {
 					var target = $(e.target);
 					var additional_form = $('.additional-form');
-					
+
 					if (target.hasClass('yes')) {
 						additional_form.show('fadein');
 					} else {
@@ -30,14 +30,10 @@
 					}
 				});
 			});
-			
-			
+
 		</script>
 		<link type="text/css" rel="stylesheet" href="css/bootstrap.min.css" />
 		<style type="text/css">
-			.btn {
-				height: 5em;			}
-
 			div img {
 				display: block;
 				margin: auto;
@@ -52,11 +48,15 @@
 				text-align: center;
 			}
 
+			.input-buttons .btn {
+				height: 5em;
+			}
+
 			p.lead {
 				width: 600px;
 				margin: auto;
 			}
-			
+
 			.answer {
 				color: #049cdb;
 				text-align: center;
@@ -77,6 +77,7 @@
 			</div>
 		</div>
 
+
 		<div id="myCarousel" class="carousel slide">
 			<!-- Carousel items -->
 			<div class="carousel-inner">
@@ -88,7 +89,7 @@
 					<p class="lead answer">
 						N/A
 					</p>
-					<div class="btn-group" data-toggle="buttons-radio">
+					<div class="btn-group input-buttons" data-toggle="buttons-radio">
 						<button type="button" class="btn btn-primary">
 							Everyone
 						</button>
@@ -114,7 +115,7 @@
 					<p class="lead answer">
 						N/A
 					</p>
-					<div class="btn-group" data-toggle="buttons-radio">
+					<div class="btn-group input-buttons" data-toggle="buttons-radio">
 						<button type="button" class="btn btn-primary">
 							Exact Location
 						</button>
@@ -139,7 +140,7 @@
 						<br>
 						<input type="text" name="reason">
 					</form>
-					<div class="btn-group more-form" data-toggle="buttons-radio">
+					<div class="btn-group more-form input-buttons" data-toggle="buttons-radio">
 						<button type="button" class="btn btn-primary yes" style="width: 5em;">
 							Yes
 						</button>
