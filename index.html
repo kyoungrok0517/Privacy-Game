@@ -6,27 +6,37 @@
 		<script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
 		<script src="js/bootstrap.min.js"></script>
 		<script type="text/javascript">
-			var index = 0;
-		
 			$(document).ready(function() {
-				var questions = $('.question');
+				$('.carousel').carousel({
+					interval : false
+				});
 				
-				console.log(questions);
-				
-				$('.next').click(function() {
-					$(questions[index]).effect( 'slide', {direction: 'right'}, 500, function() {$(this).hide(); } );
+				$('.btn').click(function() {
+					var answer = $(this).text();
+					var answer_container = $(this).parent().siblings('.answer');
 					
+					answer_container.text(answer);
+					answer_container.effect('highlight');
+				});
+				
+				$('.more-form').click(function(e) {
+					var target = $(e.target);
+					var additional_form = $('.additional-form');
+					
+					if (target.hasClass('yes')) {
+						additional_form.show('fadein');
+					} else {
+						additional_form.hide('fadeout');
+					}
 				});
 			});
+			
+			
 		</script>
 		<link type="text/css" rel="stylesheet" href="css/bootstrap.min.css" />
 		<style type="text/css">
 			.btn {
 				height: 5em;			}
-
-			.question {
-				display: none;
-			}
 
 			div img {
 				display: block;
@@ -36,99 +46,114 @@
 			.pagination {
 				text-align: center;
 			}
-			
+
 			.btn-group {
 				display: block;
 				text-align: center;
 			}
-			
+
 			p.lead {
 				width: 600px;
 				margin: auto;
 			}
+			
+			.answer {
+				color: #049cdb;
+				text-align: center;
+			}
 		</style>
 	</head>
 	<body class="container">
-		<div class="question row" style="display: block;">
-			<img src="img/p-1.png" alt="p-1" width="400" class="img-polaroid" />
-			<p class="lead">
-				Q1) Who would you be willing to share this picture with?
-			</p>
-			<div class="btn-group" data-toggle="buttons-radio">
-				<button type="button" class="btn btn-primary">
-					Everyone
-				</button>
-				<button type="button" class="btn btn-info">
-					Friend of Friends
-				</button>
-				<button type="button" class="btn btn-success">
-					Friends and Family
-				</button>
-				<button type="button" class="btn btn-warning">
-					Specific Groups of Users
-				</button>
-				<button type="button" class="btn btn-danger">
-					Just me!
-				</button>
-			</div>
-		</div>
-		<div class="question row">
-			<img src="img/p-2.png" alt="p-2" width="400"  class="img-polaroid" />
-			<p class="lead">
-				Q2) Can you determine where this picture was taken?
-			</p>
-			<div class="btn-group" data-toggle="buttons-radio">
-				<button type="button" class="btn btn-primary">
-					Exact Location
-				</button>
-				<button type="button" class="btn btn-info">
-					I know the general area
-				</button>
-				<button type="button" class="btn btn-success">
-					No Locational Awareness
-				</button>
-			</div>
-		</div>
-		<div class="question row">
-			<img src="img/p-3.png" alt="p-3" width="800" class="img-polaroid" />
-			<p class="lead">
-				Q3) Would you share this content?
-			</p>
-			<div class="btn-group" data-toggle="buttons-radio">
-				<button type="button" class="btn btn-primary" style="width: 5em;">
-					Yes
-				</button>
-				<button type="button" class="btn btn-info" style="width: 5em;">
-					No
-				</button>
-			</div>
-			<form>
-				<b>If Yes, please explain what features make it 'shareable'</b>
-				<input type="text" name="reason">
-			</form>
-		</div>
-
 		<div class="row">
-			<div class="pagination">
-
-				<ul>
-					<li>
-						<a href="#" class="prev">Prev</a>
-					</li>
-					<li class="active">
-						<a href="#">1</a>
-					</li>
-					<li>
-						<a href="#">2</a>
-					</li>
-					<li>
-						<a href="#">3</a>
-					</li>
-					<li>
-						<a href="#" class="next">Next</a>
-					</li>
-				</ul>
+			<div class="navbar">
+				<div class="navbar-inner">
+					<a class="brand" href="#">PrivacyGame</a>
+					<ul class="nav">
+						<li class="active">
+							<a href="#">Home</a>
+						</li>
+					</ul>
+				</div>
 			</div>
 		</div>
+
+		<div id="myCarousel" class="carousel slide">
+			<!-- Carousel items -->
+			<div class="carousel-inner">
+				<div class="question active item">
+					<img src="img/p-1.png" alt="p-1" width="400" class="img-polaroid" />
+					<p class="lead">
+						Q1) Who would you be willing to share this picture with?
+					</p>
+					<p class="lead answer">
+						N/A
+					</p>
+					<div class="btn-group" data-toggle="buttons-radio">
+						<button type="button" class="btn btn-primary">
+							Everyone
+						</button>
+						<button type="button" class="btn btn-info">
+							Friend of Friends
+						</button>
+						<button type="button" class="btn btn-success">
+							Friends and Family
+						</button>
+						<button type="button" class="btn btn-warning">
+							Specific Groups of Users
+						</button>
+						<button type="button" class="btn btn-danger">
+							Just me!
+						</button>
+					</div>
+				</div>
+				<div class="question item">
+					<img src="img/p-2.png" alt="p-2" width="400"  class="img-polaroid" />
+					<p class="lead">
+						Q2) Can you determine where this picture was taken?
+					</p>
+					<p class="lead answer">
+						N/A
+					</p>
+					<div class="btn-group" data-toggle="buttons-radio">
+						<button type="button" class="btn btn-primary">
+							Exact Location
+						</button>
+						<button type="button" class="btn btn-info">
+							I know the general area
+						</button>
+						<button type="button" class="btn btn-success">
+							No Locational Awareness
+						</button>
+					</div>
+				</div>
+				<div class="question item">
+					<img src="img/p-3.png" alt="p-3" width="800" class="img-polaroid" />
+					<p class="lead" style="width: 800px;">
+						Q3) Would you share this content?
+					</p>
+					<p class="lead answer">
+						N/A
+					</p>
+					<form class="additional-form" style="text-align: center; display: none;">
+						<b>If Yes, please explain what features make it 'shareable'</b>
+						<br>
+						<input type="text" name="reason">
+					</form>
+					<div class="btn-group more-form" data-toggle="buttons-radio">
+						<button type="button" class="btn btn-primary yes" style="width: 5em;">
+							Yes
+						</button>
+						<button type="button" class="btn btn-info no" style="width: 5em;">
+							No
+						</button>
+					</div>
+				</div>
+
+			</div>
+			<!-- Carousel nav -->
+			<a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>
+			<a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>
+		</div>
+
 	</body>
 </html>
